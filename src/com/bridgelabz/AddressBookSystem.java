@@ -9,12 +9,12 @@ public class AddressBookSystem {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to the Address book program"); // Welcome statement
+        System.out.println("Welcome to the Address book program");
         AddressBookSystem addressBookProgram = new AddressBookSystem();
         addressBookProgram.addContactList();
     }
 
-    public void display(ArrayList<ContactItems> contactList)//Display Address book
+    public void display(ArrayList<ContactItems> contactList)
     {
         for (ContactItems contactItems : contactList) {
             System.out.println(contactItems);
