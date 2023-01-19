@@ -6,17 +6,18 @@ import java.util.Scanner;
 public class AddressBookSystem {
     static Scanner sc = new Scanner(System.in);
     static ArrayList<ContactItems> contactList = new ArrayList<>();
+    public static void main(String[] args)
+    {
 
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to the Address book program"); // Welcome statement
-        AddressBookSystem addressBookProgram = new AddressBookSystem();
-        addressBookProgram.addContactList();
+        System.out.println("Welcome to the Address book program");  // Welcome statement
+        AddressBookSystem addressBookSystem = new AddressBookSystem();
+        addressBookSystem.addContactList();
     }
 
     public void display(ArrayList<ContactItems> contactList)//Display Address book
     {
-        for (ContactItems contactItems : contactList) {
+        for (ContactItems contactItems : contactList)
+        {
             System.out.println(contactItems);
         }
     }
@@ -32,7 +33,6 @@ public class AddressBookSystem {
 
         System.out.println("Enter address : ");
         contactItems.address = sc.next();
-
 
         System.out.println("Enter city : ");
         contactItems.city = sc.next();
@@ -131,12 +131,21 @@ public class AddressBookSystem {
             }
         }
     }
+
+    public void deleteContact(ArrayList<ContactItems> contactList)
+    {
+        System.out.println("Enter the first name of the contact you wish to delete");
+        String delete = sc.next();
+        contactList.removeIf(contactItems -> contactItems.firstName.equals(delete));
+    }
     public void addContactList() {
         while (true) {
             System.out.println("Press 0 - Display all contacts");
             System.out.println("Press 1 - Add contact");
             System.out.println("Press 2 - Edit contact");
+            System.out.println("press 3 -delete contact");
             System.out.println("Press 6 - Exit");
+
             int option = sc.nextInt();
             sc.nextLine();
 
@@ -144,6 +153,7 @@ public class AddressBookSystem {
                 case 0 -> display(contactList);
                 case 1 -> addContact(null, contactList);
                 case 2 -> editContact();
+                case 3 -> deleteContact(contactList);
             }
             if (option == 6) {
                 break;
