@@ -7,11 +7,10 @@ public class AddressBookSystem {
     static Scanner sc = new Scanner(System.in);
     static ArrayList<ContactItems> contactList = new ArrayList<>();
 
-    // Main method
     public static void main(String[] args) {
 
         System.out.println("Welcome to the Address book program"); // Welcome statement
-        AddressBookProgram addressBookProgram = new AddressBookProgram();
+        AddressBookSystem addressBookProgram = new AddressBookSystem();
         addressBookProgram.addContactList();
     }
 
@@ -21,8 +20,6 @@ public class AddressBookSystem {
             System.out.println(contactItems);
         }
     }
-
-    //method to add new contacts in addressbook
     public void addContact(ContactItems contactItems, ArrayList<ContactItems> contactList) {
 
         contactItems = new ContactItems();
@@ -56,7 +53,6 @@ public class AddressBookSystem {
 
     }
 
-    //method to edit contact in contact book
     public void editContact() {
 
         System.out.println("Enter the first name of contact you wish to edit");
@@ -135,8 +131,6 @@ public class AddressBookSystem {
             }
         }
     }
-
-    // method to show conatctList in addressBook
     public void addContactList() {
         while (true) {
             System.out.println("Press 0 - Display all contacts");
