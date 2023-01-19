@@ -1,50 +1,132 @@
 package com.bridgelabz;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class AddressBookSystem {
 
-    public static void address() {
-        Scanner scanner = new Scanner(System.in);
+    private String FirstName;
+    private String LastName;
+    private String Address;
+    private String City;
+    private String State;
+    private Long ZipCode;
+    private Long PhoneNO;
+    private String Email;
 
+    Scanner scanner = new Scanner(System.in);
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+
+    public String getState() {
+        return State;
+    }
+
+    public void setState(String state) {
+        this.State = state;
+    }
+
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        this.Address = address;
+    }
+
+    public Long getZipCode() {
+        return ZipCode;
+    }
+
+    public void setZipCode(Long zipCode) {
+        ZipCode = zipCode;
+    }
+
+    public Long getPhoneNO() {
+        return PhoneNO;
+    }
+
+    public void setPhoneNO(Long phoneNO) {
+        PhoneNO = phoneNO;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public void display() {
         System.out.println("Enter Your First Name : ");
-        String first_name = scanner.next();
+        setFirstName(scanner.nextLine());
 
         System.out.println("Enter Your Last Name : ");
-        String last_name = scanner.next();
+        setLastName(scanner.nextLine());
 
         System.out.println("Enter Your Address : ");
-        String address = scanner.next();
+        setAddress(scanner.nextLine());
 
         System.out.println("Enter Your City : ");
-        String city = scanner.next();
+        setCity(scanner.next());
 
         System.out.println("Enter Your State : ");
-        String state = scanner.next();
+        setState(scanner.next());
 
         System.out.println("Enter Your Zip Code : ");
-        String zip_code = scanner.next();
+        setZipCode(scanner.nextLong());
 
         System.out.println("Enter Your Phone Number : ");
-        String phone_number = scanner.next();
+        setPhoneNO(scanner.nextLong());
 
         System.out.println("Enter Your Email Id : ");
-        String email_id = scanner.next();
+        setEmail(scanner.next());
 
-        System.out.println("First Name : " + first_name);
-        System.out.println("Last Name : " + last_name);
-        System.out.println("Address : " + address);
-        System.out.println("City : " + city);
-        System.out.println("State : " + state);
-        System.out.println("Zip Code : " + zip_code);
-        System.out.println("Phone Number : " + phone_number);
-        System.out.println("Email Id : " + email_id);
-
+        System.out.println("First Name:\t" + this.getFirstName());
+        System.out.println("Last Name :\t" + this.getLastName());
+        System.out.println("Address :\t" + this.getAddress());
+        System.out.println("City :\t" + this.getCity());
+        System.out.println("State :\t" + this.getState());
+        System.out.println("Zip Code :\t" + this.getZipCode());
+        System.out.println("Phone Number:\t" + this.getPhoneNO());
+        System.out.println("Email Id :\t" + this.getEmail());
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome To Address Book Program");
-        address();
+
+        AddressBookSystem Contact1 = new AddressBookSystem();
+        System.out.println("Enter The Details Of Contact1 : ");
+        Contact1.display();
+
+        AddressBookSystem Contact2 = new AddressBookSystem();
+        System.out.println("Enter The Details Of Contact2 : ");
+        Contact2.display();
+
+        AddressBookSystem Contact3 =new AddressBookSystem();
+        System.out.println("Enter The Details Of Contact3 : ");
+        Contact3.display();
     }
 }
